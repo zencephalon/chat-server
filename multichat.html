@@ -1,0 +1,25 @@
+<head>
+  <title>multichat</title>
+</head>
+
+<body>
+  <div class="login_bar">
+    {{> loginButtons}}
+  </div>
+  {{#if currentUser}}
+    {{> chat_list}}
+    {{> chat}}
+  {{/if}}
+</body>
+
+<template name="chat_list">
+  {{#each all_chats}}
+    {{username}} - {{timestamp}} : {{content}}<br>
+  {{/each}}
+</template>
+
+<template name="chat">
+  <form>
+    <input type="text" name="chat_message">
+  </form>
+</template>
